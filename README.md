@@ -195,3 +195,43 @@ yarn setup
 Pengguna default:
   * Email: `rochim.noviyan@gmail.com`
   * Password: `password` (atau menyesuaikan nilai konfigurasi `PASSWORD` pada `.env`)
+
+
+## Konfigurasi Node
+
+> Pastikan telah menjalankan pemasangan dan konfigurasi program!
+
+### Jalankan web monitor (tbd-server-webserver)
+
+```bash
+cd tbd-server-webserver
+yarn start
+```
+### Masuk ke web monitor
+*  Buka [http://localhost:5000](http://localhost:5000) (atau sesuai ip server)
+
+    * email: `rochim.noviyan@gmail.com` 
+    * password: `password`
+
+### Konfigurasi primary node
+
+![](.github/primary.png)
+
+* Buka halaman "Primary Node"
+* Tekan tombol "EDIT"
+* Sesuaikan isian dengan kredensial primary node
+* Tekan tombol "SIMPAN"
+
+### Konfigurasi secondary node
+
+![](.github/secondary.png)
+
+* Buka halaman "Secondary Nodes"
+* Tekan tombol "TAMBAH"
+* Sesuaikan isian dengan kredensial client secondary (tbd-client-webserver)
+  * default port: `3000`
+  * default email: `rochim.noviyan@gmail.com`
+  * default password: `password`
+* Tekan tombol "TAMBAH"
+
+
