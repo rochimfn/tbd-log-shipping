@@ -68,17 +68,6 @@ cp .env.example .env #bash atau powershell
 copy .env.example .env #cmd
 ```
 
-Isi konfigurasi dengan kredensial mongodb. Contohnya sebagai berikut:
-
-**Konfigurasi mongodb wajib sama dengan [web monitor](https://github.com/rochimfn/tbd-server-webserver)**
-```env
-MONGO_HOST='127.0.0.1'
-MONGO_PORT='27017'
-MONGO_DATABASE='log_shipping'
-MONGO_USERNAME='admin'
-MONGO_PASSWORD='password'
-```
-
 ### [tbd-server-webserver](https://github.com/rochimfn/tbd-server-webserver) (Primary Node)
 
 Panduan lengkap pemasangan dapat dibaca [disini](https://github.com/rochimfn/tbd-server-webserver#readme)
@@ -107,31 +96,6 @@ yarn
 cp .env.example .env #bash atau powershell
 copy .env.example .env #cmd
 ```
-
-Isi konfigurasi dengan kredensial mongodb dan token (random string). Contohnya sebagai berikut:
-
-**Konfigurasi mongodb wajib sama dengan [backup script](https://github.com/rochimfn/tbd-backup-script)**
-```env
-MONGO_HOST='127.0.0.1'
-MONGO_PORT='27017'
-MONGO_DATABASE='log_shipping'
-MONGO_USERNAME='admin'
-MONGO_PASSWORD='password'
-TOKEN='vmouwqhlkdjf0f29u0fh2vs'
-```
-
-5. Menyiapkan akun pengguna
-
-```
-yarn setup
-```
-
-Pengguna default:
-  * Nama Lengkap: `Rochim Farul Noviyan`
-  * Email: `rochim.noviyan@gmail.com`
-  * Password: `password`
-
-Akun pengguna dapat disesuaikan didalam pengaturan profile.
 
 ### [tbd-client-webserver](https://github.com/rochimfn/tbd-client-webserver) (Secondary Node)
 
@@ -162,9 +126,54 @@ cp .env.example .env #bash atau powershell
 copy .env.example .env #cmd
 ```
 
-Isi konfigurasi dengan kredensial sqlserver. Contohnya sebagai berikut:
 
-**Pastikan SQL Server dan aplikasi ini memiliki akses baca tulis direktori `DIR_BACKUP`**
+## Konfigurasi Program
+
+### [tbd-backup-script](https://github.com/rochimfn/tbd-backup-script) (Primary Node)
+
+Isi berkas `.env` dengan kredensial mongodb. Contohnya sebagai berikut:
+
+```env
+MONGO_HOST='127.0.0.1'
+MONGO_PORT='27017'
+MONGO_DATABASE='log_shipping'
+MONGO_USERNAME='admin'
+MONGO_PASSWORD='password'
+```
+> Konfigurasi mongodb wajib sama dengan [web monitor](https://github.com/rochimfn/tbd-server-webserver)
+
+### [tbd-server-webserver](https://github.com/rochimfn/tbd-server-webserver) (Primary Node)
+
+Isi berkas `.env` dengan kredensial mongodb dan token (random string). Contohnya sebagai berikut:
+
+```env
+MONGO_HOST='127.0.0.1'
+MONGO_PORT='27017'
+MONGO_DATABASE='log_shipping'
+MONGO_USERNAME='admin'
+MONGO_PASSWORD='password'
+TOKEN='vmouwqhlkdjf0f29u0fh2vs'
+```
+
+> Konfigurasi mongodb wajib sama dengan [backup script](https://github.com/rochimfn/tbd-backup-script)
+
+Jalankan perintah berikut untuk mendaftarkan admin untuk web monitor:
+
+```
+yarn setup
+```
+
+Pengguna default:
+  * Nama Lengkap: `Rochim Farul Noviyan`
+  * Email: `rochim.noviyan@gmail.com`
+  * Password: `password`
+
+Akun pengguna dapat disesuaikan didalam pengaturan profile.
+
+### [tbd-client-webserver](https://github.com/rochimfn/tbd-client-webserver) (Secondary Node)
+
+Isi berkas `.env` dengan kredensial sqlserver. Contohnya sebagai berikut:
+
 ```env
 PASSWORD='password'
 TOKEN='qwertyuiopasdfghjklzxcvbnm123456'
@@ -175,7 +184,9 @@ MSSQL_PASSWORD='password'
 DIR_BACKUP='C:\rc_backup_client\'
 ```
 
-5. Menyiapkan akun pengguna
+> Pastikan SQL Server dan aplikasi ini memiliki akses baca tulis direktori `DIR_BACKUP`
+
+Jalankan perintah berikut untuk mendaftarkan akun untuk backup script
 
 ```
 yarn setup
