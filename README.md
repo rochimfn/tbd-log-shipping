@@ -15,3 +15,10 @@ Repositori ini berisi dokumentasi pemasangan aplikasi custom log shipping untuk 
 ### [tbd-client-webserver](https://github.com/rochimfn/tbd-client-webserver)
 
 `tbd-client-webserver` dipasang pada secondary node. Program ini berisi dua aplikasi yaitu web api yang berperan menerima kiriman log dari `tbd-backup-script` dan script restore yang berperan me-restore log yang telah dikirim. 
+
+## Arsitektur
+
+![.github/arsitektur.png](.github/arsitektur.png)
+
+* Primary node hanya boleh ada satu.
+* Secondary node boleh lebih dari satu node.
