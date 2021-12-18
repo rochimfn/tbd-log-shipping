@@ -345,7 +345,15 @@ Tekan "OK" untuk menyimpan!
 Pastikan task terdaftar dengan menekan "Task Scheduler Library" pada sidebar bagian kiri.
 
 
+Contoh log yang dihasilkan pada primary node.
+![berkas log pada primary](.github/mon2.png)
+
+Contoh log yang dihasilkan pada secondary node.
+![berkas log pada secondary](.github/mon3.png)
+
 ### Memantu jalannya backup dengan `tbd-server-webserver`
+
+![monitor primary](.github/mon1.png)
 
 ```bash
 cd tbd-server-webserver
